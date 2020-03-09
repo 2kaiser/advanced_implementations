@@ -26,7 +26,11 @@ initial begin
   rst = 0;  mem_address = 1; mem_wdata = 1; vc_write = 1; is_mem_wdata_dirty = 0;  #2;
   vc_write = 0; #2;
   vc_read = 0; #2;
+  vc_read = 0; #3;
+  vc_read = 1; #2;
   vc_read = 0; #6;
+
+
 
 
 

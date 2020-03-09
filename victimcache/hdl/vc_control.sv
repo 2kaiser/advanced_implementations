@@ -162,7 +162,7 @@ function void RDLine();
    vc_dirty_read = 1'b0;
    vc_tag_write = 1'b0; //no need to load in tag
   //to VCC
-  shift_amt = vc_datamux_sel -1;//otherwise we want to shift by how much we matched by -1 since the first index is all the way to the right
+  shift_amt = vc_datamux_sel;//otherwise we want to shift by how much we matched by -1 since the first index is all the way to the right
   if((vc_datamux_sel != 4'b1000) && (vc_valid_dataout == vc_valid_mask)) rdata_exists = 1'b1; //set when it exists and is valid
   else rdata_exists = 1'b0;
 endfunction

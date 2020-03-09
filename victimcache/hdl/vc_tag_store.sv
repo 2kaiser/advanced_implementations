@@ -31,7 +31,7 @@ assign vc_datamux_sel = _vc_datamux_sel;
 always_ff @(posedge clk)
 begin
     if (rst) begin
-        for (int i = 0; i < vc_size; ++i)  data[i] <= '0;
+        for (int i = 0; i < vc_size; ++i)  data[i] <= -1;
     end
     else begin
       //  if(load)  data[windex] <= datain;

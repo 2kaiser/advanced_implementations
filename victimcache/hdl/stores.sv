@@ -26,7 +26,7 @@ vc_valid_ld, vc_dirty_ld, vc_plru_read, vc_plru_ld,vc_valid_datain, vc_dirty_dat
 vc_tag_cmp, vc_datastore_read, vc_valid_read, vc_dirty_read,
 
 //to VCC
-vc_valid_dataout, vc_dirty_dataout,
+vc_valid_dataout, vc_dirty_dataout,vc_datamux_sel,
 vc_plru_dataout,
 //to L1 cache
 vc_vcmem_rdata256
@@ -53,7 +53,7 @@ output logic [num_of_plru_bits-1:0] vc_plru_dataout;
 output logic [s_line-1:0] vc_vcmem_rdata256;
 /************************************************************************************************************************/
 /************************************************************************************************************************/
-logic [num_mux_sel_bits-1:0] vc_datamux_sel;
+output [num_mux_sel_bits-1:0] vc_datamux_sel;
 //internal sig declaration
 /************************************************************************************************************************/
 logic [s_line-1:0] cacheline8, cacheline1, cacheline2, cacheline3, cacheline4, cacheline5, cacheline6, cacheline7;
