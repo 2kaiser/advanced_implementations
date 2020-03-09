@@ -20,14 +20,14 @@ clk, rst,
 //from cpu
 mem_address,
 //from L1 control
-vc_write,vc_read, //asserted on memory access by cacheline adapter
-//from L1 cache
+vc_write,vc_read, //asserted on miss (vc_read) for a line or eviction (vc_write) by L1
+//data from L1 cache and you have to indicate with is_mem_wdata_dirty if the line is dirty
 mem_wdata, is_mem_wdata_dirty,
 
 //OUTS
 //to cache
-vc_vcmem_rdata256, //output line
-rdata_exists //asserted when the cacheline at mem_address is valid and the tag matches
+vc_vcmem_rdata256, //output cache line data
+rdata_exists //asserted when the write or read operation is done
 );
 /************************************************************************************************************************/
 //I/O declarations
