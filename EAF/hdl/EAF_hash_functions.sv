@@ -18,37 +18,22 @@ which involves doing a combination of multiplications by constants, xors, and lo
 */
 
 module EAF_hash_functions #(
-  parameter first_prime_pow_2 = 2,
-  parameter second_prime_pow_2 = 4,
-  parameter third_prime_pow_2 = 8,
-  parameter fourth_prime_pow_2 = 32,
-  parameter fifth_prime_pow_2 = 128,
-  parameter sixth_prime_pow_2 = 2048,
-  parameter seventh_prime_pow_2 = 8192,
-parameter num_of_BF_entries = 4096,
-parameter addr_length = 32,
-parameter num_of_index_bits = $clog2(num_of_BF_entries),
-parameter max_num_of_entries = 8, //size of cache
-parameter num_of_counter_bits = $clog2(max_num_of_entries)
+parameter addr_length = 32
 )
 (
 //global
 clk, rst,
-//to cache
-priority_level, //asserted if it exists in bloom filter so it should be placed in the MRU position in the cache
 //from cache
 //addresses from cache to insert and test to see if it exists in bloom filter
-mem_addr, insert_resp_i, //asserted when you want to insert a line
-test_resp_i //asserted when you want to test to see if a line is in the bloom filter
-);
+mem_addr, first_prime_index, second_prime_index, third_prime_index,fourth_prime_index, fifth_prime_index,sixth_prime_index,seventh_prime_index
 /******************************************************************************************************************8*/
 //global
-iniput clk, rst;
+input clk, rst;
 //from cache
 //addresses from cache to insert and test to see if it exists in bloom filter
-input [31:0] mem_addr; //asserted when you want to insert a line
+input [addr_length-1:0] mem_addr; //asserted when you want to insert a line
 input insert_resp_i, test_resp_i; //asserted when you want to test to see if a line is in the bloom filter
-logic [31:0] inter_val_one,inter_val_two; //asserted when you want to insert a line
+logic [addr_length-1:0] inter_val_one,inter_val_two; //asserted when you want to insert a line
 logic one_zero_const = 8'h55555555; //alternating 0's and 1's
 logic inv_golden_ratio_const = 8'h9e3779b9; //the inverse of teh golden ratio
 /******************************************************************************************************************8*/
@@ -60,16 +45,17 @@ output [4:0] fourth_prime_index;
 output [6:0] fifth_prime_index;
 output [10:0] sixth_prime_index;
 output [12:0] seventh_prime_index;
+
+assign first_prime_index = inter_val_two[0] % 2'b1;
+assign second_prime_index = inter_val_two[1:0] % 3'b100;
+assign third_prime_index = inter_val_two[2:0] % 4'b1000;
+assign fourth_prime_index = inter_val_two[4:0] % 6'b100000;
+assign fifth_prime_index = inter_val_two[6:0] % 8'b10000000;
+assign sixth_prime_index = inter_val_two[10:0] % 12'b100000000000;
+assign seventh_prime_index = inter_val_two[12:0] % 14'b10000000000000;
 /******************************************************************************************************************8*/
 always_comb begin
   inter_val_one = (mem_addr ^ {16'b0000000000000000,mem_addr[31:16]}) * one_zero_const;
   inter_val_two = (inter_val_one ^ {16'b0000000000000000,inter_val_one[31:16]}) * inv_golden_ratio_const;
-  first_prime_index = inter_val_two % first_prime_pow_2;
-  second_prime_index = inter_val_two % second_prime_pow_2;
-  third_prime_index = inter_val_two % third_prime_pow_2;
-  fourth_prime_index = inter_val_two % fourth_prime_pow_2;
-  fifth_prime_index = inter_val_two % fifth_prime_pow_2;
-  sixth_prime_index = inter_val_two % sixth_prime_pow_2;
-  seventh_prime_index = inter_val_two % seventh_prime_pow_2;
 end
 endmodule : EAF_hash_functions
