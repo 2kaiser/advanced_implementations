@@ -1,0 +1,498 @@
+Analysis & Elaboration report for victimcache
+Sun Mar  8 23:01:44 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |victimcache
+  5. Parameter Settings for User Entity Instance: stores:STORES
+  6. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS
+  7. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array1
+  8. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array2
+  9. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array3
+ 10. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array4
+ 11. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array5
+ 12. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array6
+ 13. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array7
+ 14. Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array8
+ 15. Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS
+ 16. Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_metadata_array:valid_array
+ 17. Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_metadata_array:dirty_array
+ 18. Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_plru_array:plru_array
+ 19. Parameter Settings for User Entity Instance: stores:STORES|vc_tag_store:VC_TS
+ 20. Parameter Settings for User Entity Instance: vc_control:VCC
+ 21. Analysis & Elaboration Settings
+ 22. Port Connectivity Checks: "vc_control:VCC"
+ 23. Port Connectivity Checks: "stores:STORES|vc_tag_store:VC_TS"
+ 24. Port Connectivity Checks: "stores:STORES|vc_data_store:VC_DS"
+ 25. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                      ;
++-----------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status     ; Successful - Sun Mar  8 23:01:44 2020           ;
+; Quartus Prime Version             ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                     ; victimcache                                     ;
+; Top-level Entity Name             ; victimcache                                     ;
+; Family                            ; Arria II GX                                     ;
+; Logic utilization                 ; N/A until Partition Merge                       ;
+;     Combinational ALUTs           ; N/A until Partition Merge                       ;
+;     Memory ALUTs                  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers     ; N/A until Partition Merge                       ;
+; Total registers                   ; N/A until Partition Merge                       ;
+; Total pins                        ; N/A until Partition Merge                       ;
+; Total virtual pins                ; N/A until Partition Merge                       ;
+; Total block memory bits           ; N/A until Partition Merge                       ;
+; DSP block 18-bit elements         ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PCS    ; N/A until Partition Merge                       ;
+; Total GXB Receiver Channel PMA    ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PCS ; N/A until Partition Merge                       ;
+; Total GXB Transmitter Channel PMA ; N/A until Partition Merge                       ;
+; Total PLLs                        ; N/A until Partition Merge                       ;
+; Total DLLs                        ; N/A until Partition Merge                       ;
++-----------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |victimcache ;
++------------------+-------+--------------------------------------------------+
+; Parameter Name   ; Value ; Type                                             ;
++------------------+-------+--------------------------------------------------+
+; s_offset         ; 5     ; Signed Integer                                   ;
+; s_index          ; 3     ; Signed Integer                                   ;
+; s_tag            ; 24    ; Signed Integer                                   ;
+; s_mask           ; 32    ; Signed Integer                                   ;
+; s_line           ; 256   ; Signed Integer                                   ;
+; num_sets         ; 8     ; Signed Integer                                   ;
+; rv32word_length  ; 32    ; Signed Integer                                   ;
+; burst_size       ; 64    ; Signed Integer                                   ;
+; size_of_vc       ; 8     ; Signed Integer                                   ;
+; tag_width        ; 24    ; Signed Integer                                   ;
+; num_of_plru_bits ; 3     ; Signed Integer                                   ;
+; num_read_bits    ; 1     ; Signed Integer                                   ;
+; num_mux_sel_bits ; 4     ; Signed Integer                                   ;
++------------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES ;
++------------------+-------+---------------------------------+
+; Parameter Name   ; Value ; Type                            ;
++------------------+-------+---------------------------------+
+; s_offset         ; 5     ; Signed Integer                  ;
+; s_index          ; 3     ; Signed Integer                  ;
+; s_tag            ; 24    ; Signed Integer                  ;
+; s_mask           ; 32    ; Signed Integer                  ;
+; s_line           ; 256   ; Signed Integer                  ;
+; num_sets         ; 8     ; Signed Integer                  ;
+; rv32word         ; 32    ; Signed Integer                  ;
+; burst_size       ; 64    ; Signed Integer                  ;
+; tag_width        ; 24    ; Signed Integer                  ;
+; size_of_vc       ; 8     ; Signed Integer                  ;
+; num_mux_sel_bits ; 4     ; Signed Integer                  ;
+; num_of_plru_bits ; 3     ; Signed Integer                  ;
++------------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; s_offset       ; 5     ; Signed Integer                                        ;
+; s_index        ; 3     ; Signed Integer                                        ;
+; s_tag          ; 24    ; Signed Integer                                        ;
+; s_mask         ; 32    ; Signed Integer                                        ;
+; s_line         ; 256   ; Signed Integer                                        ;
+; num_sets       ; 8     ; Signed Integer                                        ;
+; rv32word       ; 32    ; Signed Integer                                        ;
+; burst_size     ; 64    ; Signed Integer                                        ;
+; size_of_vc     ; 8     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array1 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array2 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array3 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array4 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array5 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array6 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array7 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array8 ;
++----------------+-------+---------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                            ;
++----------------+-------+---------------------------------------------------------------------------------+
+; s_line         ; 1     ; Signed Integer                                                                  ;
+; s_mask         ; 1     ; Signed Integer                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS ;
++------------------+-------+----------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                     ;
++------------------+-------+----------------------------------------------------------+
+; num_output_bits  ; 3     ; Signed Integer                                           ;
+; tag_width        ; 24    ; Signed Integer                                           ;
+; vc_size          ; 8     ; Signed Integer                                           ;
+; num_idx_bits     ; 3     ; Signed Integer                                           ;
+; num_mux_sel_bits ; 3     ; Signed Integer                                           ;
++------------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_metadata_array:valid_array ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; vc_size        ; 8     ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_metadata_array:dirty_array ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------------+
+; vc_size        ; 8     ; Signed Integer                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_metadata_store:VC_MDS|vc_plru_array:plru_array ;
++-----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                                               ;
++-----------------+-------+------------------------------------------------------------------------------------+
+; num_output_bits ; 3     ; Signed Integer                                                                     ;
++-----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stores:STORES|vc_tag_store:VC_TS ;
++------------------+-------+----------------------------------------------------+
+; Parameter Name   ; Value ; Type                                               ;
++------------------+-------+----------------------------------------------------+
+; tag_width        ; 24    ; Signed Integer                                     ;
+; vc_size          ; 8     ; Signed Integer                                     ;
+; num_mux_sel_bits ; 4     ; Signed Integer                                     ;
++------------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vc_control:VCC ;
++------------------+-------+----------------------------------+
+; Parameter Name   ; Value ; Type                             ;
++------------------+-------+----------------------------------+
+; s_offset         ; 5     ; Signed Integer                   ;
+; s_index          ; 3     ; Signed Integer                   ;
+; s_tag            ; 24    ; Signed Integer                   ;
+; s_mask           ; 32    ; Signed Integer                   ;
+; s_line           ; 256   ; Signed Integer                   ;
+; num_sets         ; 8     ; Signed Integer                   ;
+; rv32word         ; 32    ; Signed Integer                   ;
+; burst_size       ; 64    ; Signed Integer                   ;
+; tag_width        ; 24    ; Signed Integer                   ;
+; size_of_vc       ; 8     ; Signed Integer                   ;
+; num_bits_for_vc  ; 3     ; Signed Integer                   ;
+; num_of_plru_bits ; 3     ; Signed Integer                   ;
+; num_mux_sel_bits ; 4     ; Signed Integer                   ;
++------------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; EP2AGX45DF25I3     ;                    ;
+; Top-level entity name                                                           ; victimcache        ; victimcache        ;
+; Family name                                                                     ; Arria II GX        ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "vc_control:VCC"       ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; vc_datamux_sel ; Input ; Info     ; Stuck at GND ;
++----------------+-------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stores:STORES|vc_tag_store:VC_TS"                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; vc_datamux_sel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stores:STORES|vc_data_store:VC_DS"                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; cacheline8 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline4 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline5 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline6 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; cacheline7 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Sun Mar  8 23:01:27 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off victimcache -c victimcache --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/victimcache.sv
+    Info (12023): Found entity 1: victimcache File: /home/skcheun2/Desktop/victimcache/hdl/victimcache.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_tag_store.sv
+    Info (12023): Found entity 1: vc_tag_store File: /home/skcheun2/Desktop/victimcache/hdl/vc_tag_store.sv Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file hdl/vc_tag_data_cntrl.sv
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_plru_logic.sv
+    Info (12023): Found entity 1: vc_plru_logic File: /home/skcheun2/Desktop/victimcache/hdl/vc_plru_logic.sv Line: 1
+Warning (10885): Verilog HDL Attribute warning at vc_plru_array.sv(21): synthesis attribute "ramstyle" with value ""logic"" has no object and is ignored File: /home/skcheun2/Desktop/victimcache/hdl/vc_plru_array.sv Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_plru_array.sv
+    Info (12023): Found entity 1: vc_plru_array File: /home/skcheun2/Desktop/victimcache/hdl/vc_plru_array.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_metadata_store.sv
+    Info (12023): Found entity 1: vc_metadata_store File: /home/skcheun2/Desktop/victimcache/hdl/vc_metadata_store.sv Line: 1
+Warning (10885): Verilog HDL Attribute warning at vc_metadata_array.sv(19): synthesis attribute "ramstyle" with value ""logic"" has no object and is ignored File: /home/skcheun2/Desktop/victimcache/hdl/vc_metadata_array.sv Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_metadata_array.sv
+    Info (12023): Found entity 1: vc_metadata_array File: /home/skcheun2/Desktop/victimcache/hdl/vc_metadata_array.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_data_store.sv
+    Info (12023): Found entity 1: vc_data_store File: /home/skcheun2/Desktop/victimcache/hdl/vc_data_store.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_data_array.sv
+    Info (12023): Found entity 1: vc_data_array File: /home/skcheun2/Desktop/victimcache/hdl/vc_data_array.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/vc_control.sv
+    Info (12023): Found entity 1: vc_control File: /home/skcheun2/Desktop/victimcache/hdl/vc_control.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/stores.sv
+    Info (12023): Found entity 1: stores File: /home/skcheun2/Desktop/victimcache/hdl/stores.sv Line: 1
+Info (12127): Elaborating entity "victimcache" for the top level hierarchy
+Warning (10030): Net "vc_datamux_sel" at victimcache.sv(61) has no driver or initial value, using a default initial value '0' File: /home/skcheun2/Desktop/victimcache/hdl/victimcache.sv Line: 61
+Info (12128): Elaborating entity "stores" for hierarchy "stores:STORES" File: /home/skcheun2/Desktop/victimcache/hdl/victimcache.sv Line: 70
+Warning (10034): Output port "vc_vcmem_rdata256" at stores.sv(53) has no driver File: /home/skcheun2/Desktop/victimcache/hdl/stores.sv Line: 53
+Info (12128): Elaborating entity "vc_data_store" for hierarchy "stores:STORES|vc_data_store:VC_DS" File: /home/skcheun2/Desktop/victimcache/hdl/stores.sv Line: 63
+Info (12128): Elaborating entity "vc_data_array" for hierarchy "stores:STORES|vc_data_store:VC_DS|vc_data_array:data_array1" File: /home/skcheun2/Desktop/victimcache/hdl/vc_data_store.sv Line: 35
+Info (12128): Elaborating entity "vc_metadata_store" for hierarchy "stores:STORES|vc_metadata_store:VC_MDS" File: /home/skcheun2/Desktop/victimcache/hdl/stores.sv Line: 64
+Info (12128): Elaborating entity "vc_metadata_array" for hierarchy "stores:STORES|vc_metadata_store:VC_MDS|vc_metadata_array:valid_array" File: /home/skcheun2/Desktop/victimcache/hdl/vc_metadata_store.sv Line: 40
+Info (12128): Elaborating entity "vc_plru_array" for hierarchy "stores:STORES|vc_metadata_store:VC_MDS|vc_plru_array:plru_array" File: /home/skcheun2/Desktop/victimcache/hdl/vc_metadata_store.sv Line: 42
+Info (12128): Elaborating entity "vc_tag_store" for hierarchy "stores:STORES|vc_tag_store:VC_TS" File: /home/skcheun2/Desktop/victimcache/hdl/stores.sv Line: 65
+Warning (10230): Verilog HDL assignment warning at vc_tag_store.sv(48): truncated value with size 32 to match size of target (4) File: /home/skcheun2/Desktop/victimcache/hdl/vc_tag_store.sv Line: 48
+Info (12128): Elaborating entity "vc_control" for hierarchy "vc_control:VCC" File: /home/skcheun2/Desktop/victimcache/hdl/victimcache.sv Line: 73
+Info (12128): Elaborating entity "vc_plru_logic" for hierarchy "vc_control:VCC|vc_plru_logic:PLRUC" File: /home/skcheun2/Desktop/victimcache/hdl/vc_control.sv Line: 69
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1379 megabytes
+    Info: Processing ended: Sun Mar  8 23:01:44 2020
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:29
+
+
