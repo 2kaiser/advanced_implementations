@@ -18,6 +18,8 @@ initial begin
   rst = 1; #3;
   rst = 0; mem_addr = 1; insert_resp_i = 1; #4;
   insert_resp_i = 0; #4;
-  test_resp_i = 1; #4;
+  test_resp_i = 1; #2;
+  test_resp_i = 0; #2;
+
 end
 endmodule : tb
